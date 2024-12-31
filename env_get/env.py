@@ -1,10 +1,25 @@
 import os
 from typing import (
-    Any, Callable, List, Optional, Union
+    Any, Callable, List, Optional, Union,
+    Protocol, cast
 )
 
 
 Converter = Callable[[Any, str, bool], Any]
+Converters = Optional[Union[Converter, List[Converter]]]
+
+class EnvFunction(Protocol):
+    def __call__(
+        self,
+        key: str,
+        converter: Converters = None,
+        defaults: Any = None
+    ) -> Any:
+        ...
+
+    boolean: Converter
+    integer: Converter
+    required: Converter
 
 
 def make_array(obj: Union[Converter, List[Converter]]) -> List[Converter]:
@@ -22,9 +37,11 @@ def make_array(obj: Union[Converter, List[Converter]]) -> List[Converter]:
     return [obj]
 
 
-def env(key: str,
-        converter: Optional[Union[Converter, List[Converter]]] = None,
-        defaults: Any = None) -> Any:
+def _env(
+    key: str,
+    converter: Converters = None,
+    defaults: Any = None
+) -> Any:
     """
     Retrieve and convert an environment variable.
 
@@ -110,6 +127,8 @@ def required_converter(v: Any, key: str, is_default: bool) -> Any:
         raise EnvRequiredError(f'env "{key}" is required')
     return v
 
+
+env = cast(EnvFunction, _env)
 
 # Attach converters to env function
 env.boolean = boolean_converter

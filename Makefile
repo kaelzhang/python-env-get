@@ -1,4 +1,4 @@
-files = env_get test *.py
+files = env_get
 test_files = *
 
 # For local development

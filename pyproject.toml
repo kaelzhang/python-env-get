@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "env-get"
+authors = [
+    {name = "Kael Zhang", email = "i+pypi@kael.me"}
+]
+description = "env get"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["env-get"]
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.7"
+dynamic = ['version']
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/kaelzhang/python-env-get"
+
+[project.optional-dependencies]
+dev = [
+    # "codecov",
+    "coverage",
+    "ruff",
+    "pytest",
+    # "pytest-asyncio",
+    "pytest-cov",
+    "twine",
+    "mypy",
+    "build"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "env_get.__version__"}
+
+[tool.setuptools.package-data]
+env_get = ["py.typed"]
+
+[tool.mypy]
+warn_return_any = true
+ignore_missing_imports = true
+no_implicit_optional = true
+strict_optional = true

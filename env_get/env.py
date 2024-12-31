@@ -63,7 +63,7 @@ def boolean_converter(v: Any, key: str, is_default: bool) -> bool:
     Returns:
         The boolean representation of the value.
     """
-    return v in ('true', '1', 'Y', 'y', 'yes', True)
+    return v in ('True', 'true', '1', 'Y', 'y', 'yes', True)
 
 
 def integer_converter(v: Any, key: str, is_default: bool) -> int:

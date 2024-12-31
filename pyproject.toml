@@ -7,10 +7,10 @@ name = "env-get"
 authors = [
     {name = "Kael Zhang", email = "i+pypi@kael.me"}
 ]
-description = "env get"
+description = "Manage and get process.env"
 readme = "README.md"
 license = {file = "LICENSE"}
-keywords = ["env-get"]
+keywords = ["env-get", "env", "process.env", "environment variable"]
 classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3.7",
@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "License :: OSI Approved :: MIT License",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3"
 dynamic = ['version']
 dependencies = []
 

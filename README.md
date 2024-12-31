@@ -1,12 +1,13 @@
 [![](https://github.com/kaelzhang/python-env-get/actions/workflows/python.yml/badge.svg)](https://github.com/kaelzhang/python-env-get/actions/workflows/python.yml)
 [![](https://codecov.io/gh/kaelzhang/python-env-get/branch/master/graph/badge.svg)](https://codecov.io/gh/kaelzhang/python-env-get)
 [![](https://img.shields.io/pypi/v/env-get.svg)](https://pypi.org/project/env-get/)
-<!-- [![Conda version](https://img.shields.io/conda/vn/conda-forge/env-get)](https://anaconda.org/conda-forge/env-get) -->
 [![](https://img.shields.io/pypi/l/env-get.svg)](https://github.com/kaelzhang/python-env-get)
+
+<!-- [![Conda version](https://img.shields.io/conda/vn/conda-forge/env-get)](https://anaconda.org/conda-forge/env-get) -->
 
 # env-get
 
-Manage and retrieve `process.env` in Python.
+Manage and retrieve env variables in Python.
 
 ## Install
 

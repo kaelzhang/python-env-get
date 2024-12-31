@@ -131,6 +131,6 @@ def required_converter(v: Any, key: str, is_default: bool) -> Any:
 env = cast(EnvFunction, _env)
 
 # Attach converters to env function
-env.boolean = boolean_converter
-env.integer = integer_converter
-env.required = required_converter
+env.boolean = boolean_converter   # type: ignore
+env.integer = integer_converter   # type: ignore
+env.required = required_converter # type: ignore

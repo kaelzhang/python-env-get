@@ -31,6 +31,9 @@ def Converter(v: Any, key: str, is_default: bool) -> Any:
 
 - **key** `str`: The environment variable key.
 - **converter** `Optional[Converter | List[Converter]]` A converter function or a list of converter functions.
+  - **v** the current value of the variable
+  - **key** the key of the environment variable
+  - **is_default** `True` means the environment variable is not set, even not set as `FOO=`
 - **defaults** `Opitonal[Any]` The optional default value if the environment variable is not found.
 
 Returns `Any` the retrieved env variable.

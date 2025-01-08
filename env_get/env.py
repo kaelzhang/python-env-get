@@ -1,4 +1,5 @@
 import os
+import re
 from typing import (
     Any, Callable, List, Optional, Union,
     Protocol, cast
@@ -68,6 +69,9 @@ def _env(
     return value
 
 
+REGEX_TRUE_OR_YES = re.compile(r'(?i)^(?:true|yes)$')
+
+
 def boolean_converter(v: Any, key: str, is_default: bool) -> bool:
     """
     Convert a value to boolean.
@@ -80,7 +84,9 @@ def boolean_converter(v: Any, key: str, is_default: bool) -> bool:
     Returns:
         The boolean representation of the value.
     """
-    return v in ('True', 'true', '1', 'Y', 'y', 'yes', True)
+    return v is not None and (
+        v in ('1', 'Y', 'y', True) or REGEX_TRUE_OR_YES.match(v) is not None
+    )
 
 
 def integer_converter(v: Any, key: str, is_default: bool) -> int:

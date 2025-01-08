@@ -18,7 +18,7 @@ $ pip install env-get
 ## Usage
 
 ```py
-from env_get import env, EnvRequiredError
+from env_get import env
 
 port = env('SERVER_PORT', env.integer, 80)
 ```

@@ -16,7 +16,7 @@ class EnvFunction(Protocol):
         converter: Converters = None,
         defaults: Any = None
     ) -> Any:
-        ...
+        ...  # pragma: no cover
 
     boolean: Converter
     integer: Converter
